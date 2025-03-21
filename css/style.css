@@ -209,6 +209,9 @@ body {
 .header__body-menu .header__list-link {
   color: #fff;
 }
+.header__body-menu.active {
+  display: block;
+}
 
 .main {
   padding: 60px 0;
@@ -265,6 +268,7 @@ body {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  transition: transform 0.1s linear;
 }
 
 .skills {
@@ -436,6 +440,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 .projects__body-bg {
   width: 45%;
@@ -477,6 +482,95 @@ body {
 }
 .projects .title {
   color: #fff;
+}
+
+.contact {
+  padding: 60px 0;
+}
+.contact__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact__content-bg {
+  width: 45%;
+}
+.contact__bg-img {
+  width: 100%;
+  height: 372px;
+}
+.contact__bg-img svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.contact__bg-row {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact__btn-link {
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  background: #000;
+}
+.contact__content-info {
+  width: 45%;
+}
+.contact__info-text {
+  margin: 20px 0 40px;
+}
+.contact__info-email {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000;
+}
+
+.footer {
+  padding: 25px 0;
+  background: #000;
+}
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__content-logo {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__content-logo svg {
+  fill: #fff;
+}
+.footer__content-logo span {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+}
+.footer__content-frame {
+  width: 16%;
+}
+.footer__frame-text {
+  text-align: right;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 @media (max-width: 1024px) {

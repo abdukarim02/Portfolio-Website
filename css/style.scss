@@ -143,6 +143,9 @@ body {
         .header__list-link {
             color: $primary-white;
         }
+        &.active {
+            display: block;
+        }
     }
 }
 .main {
@@ -188,6 +191,7 @@ body {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            transition: transform 0.1s linear;
         }
     }
 }
@@ -335,6 +339,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
+        z-index: 2;
     }
     &__body-bg {
         width: 45%;
@@ -369,6 +374,72 @@ body {
     }
     .title {
         color: $primary-white;
+    }
+}
+.contact {
+    padding: 60px 0;
+    &__content {
+        @include stylcenter(flex, center, space-between);
+    }
+    &__content-bg {
+        width: 45%;
+    }
+    &__bg-img {
+        width: 100%;
+        height: 372px;
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__bg-row {
+        margin-top: 90px;
+        @include stylcenter(flex, center, space-between);
+    }
+    &__btn-link {
+        border-radius: 4px;
+        padding: 16px 20px;
+        @include stylefontz($font-family, 600, 20px, $primary-white);
+        background: $primary-black;
+    }
+    &__content-info {
+        width: 45%;
+    }
+    &__info-text {
+        margin: 20px 0 40px;
+    }
+    &__info-email {
+        @include stylefontz($font-family, 600, 28px, $primary-black);
+    }
+}
+.footer {
+    padding: 25px 0;
+    background: $primary-black;
+    &__content {
+        @include stylcenter(flex, center, space-between);
+    }
+    &__content-logo {
+        width: 15%;
+        @include stylcenter(flex, center, space-between);
+        svg {
+            fill: $primary-white;
+        }
+        span {
+            @include stylefontz($font-family, 700, 20px, $primary-white);
+            line-height: 120%;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+        }
+    }
+    &__content-frame {
+        width: 16%;
+    }
+    &__frame-text {
+        text-align: right;
+        @include stylefontz($font-family, 600, 16px, $primary-white);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
     }
 }
 @media (max-width: 1024px) {
