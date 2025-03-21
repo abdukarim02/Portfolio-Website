@@ -264,6 +264,212 @@ body {
      object-fit: contain;
 }
 
+.skills {
+  padding-bottom: 60px;
+}
+.skills__content-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.skills__content-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.skills__wrap-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  flex: 0 1 15%;
+  height: 186px;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.skills__wrap-flex:hover {
+  background: #000;
+}
+.skills__wrap-flex:hover .skills__flex-name {
+  color: #f4f4f5;
+}
+.skills__wrap-flex:hover .skills__flex-bg {
+  background: #fff;
+}
+.skills__flex-bg {
+  width: 56px;
+  height: 56px;
+  background: #f4f4f5;
+  transition: all 0.3s ease-in;
+}
+.skills__flex-bg svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  fill: #000;
+}
+.skills__flex-name {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  text-align: center;
+  transition: all 0.3s ease-in;
+}
+
+.experience {
+  background: #000;
+  padding: 60px 0;
+}
+.experience__content-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.experience__content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 32px;
+}
+.experience__row-body {
+  padding: 30px 24px;
+  border: 1px solid #71717a;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.experience__row-body:hover {
+  background: #27272a;
+}
+.experience__body-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.experience__top-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.experience__top-logo span {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #d4d4d8;
+}
+.experience__top-name {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #d4d4d8;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.about {
+  padding: 60px 0;
+}
+.about__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about__content-bg {
+  width: 45%;
+  height: 572px;
+}
+.about__content-bg svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.about__content-info {
+  width: 45%;
+  padding-top: 20px;
+}
+.about__info-title {
+  margin-bottom: 20px;
+}
+.about__info-text {
+  margin-bottom: 20px;
+}
+
+.projects {
+  padding: 60px 0;
+  background: #000;
+}
+.projects__content-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.projects__row-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.projects__row-body:hover .projects__body-bg img {
+  transform: scale(1.2);
+}
+.projects__info-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.projects__body-bg {
+  width: 45%;
+  height: 397px;
+  overflow: hidden;
+  border-radius: 19px;
+}
+.projects__body-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in;
+}
+.projects__body-info {
+  width: 45%;
+  height: 296px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.projects__info-name {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #fff;
+}
+.projects__info-btn {
+  width: 20px;
+  height: 20px;
+}
+.projects__info-btn svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.projects .title {
+  color: #fff;
+}
+
 @media (max-width: 1024px) {
   .title {
     font-size: 40px;
@@ -287,6 +493,25 @@ body {
     width: 100%;
   }
   .main__content-bg {
+    width: 100%;
+  }
+  .about__content {
+    flex-direction: column;
+  }
+  .about__content-bg {
+    width: 100%;
+  }
+  .about__content-info {
+    width: 100%;
+  }
+  .projects__row-body {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .projects__body-bg {
+    width: 100%;
+  }
+  .projects__body-info {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
