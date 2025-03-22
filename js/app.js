@@ -42,17 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 document.addEventListener("scroll", () => {
+    if (window.innerWidth < 990) return;
+  
     document.querySelectorAll("[data-speed]").forEach((element) => {
       const speed = parseFloat(element.getAttribute("data-speed"));
       const scrollY = window.scrollY;
-      
+  
       // Параллакс-эффект (движение вверх-вниз)
       const yPos = scrollY * speed;
-      element.style.transform = `translateX(${yPos}px)`;
       
       // Изменение размера (уменьшение при прокрутке вниз)
-      let scale = 1 - scrollY * 0.0005; // Чем дальше скролл, тем меньше
-      scale = Math.max(-1, scale); // Минимальный размер - 0.5x
-      element.style.transform += ` scale(${scale})`;
+      let scale = 1 - scrollY * 0.0005; 
+      scale = Math.max(0.5, scale); // Минимальный размер - 0.5x
+  
+      // Объединение transform
+      element.style.transform = `translateX(${yPos}px) scale(${scale})`;
     });
   });
+  
