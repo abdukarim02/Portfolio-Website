@@ -26,4 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-  
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll(".link");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Предотвращаем стандартный переход
+
+            const targetId = this.getAttribute("href").substring(1); // Получаем ID секции
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50, // Отступ сверху (можно убрать)
+                    behavior: "smooth" // Плавный скролл
+                });
+            }
+        });
+    });
+});

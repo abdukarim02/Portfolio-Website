@@ -69,7 +69,7 @@ body {
     background: $primary-white;
     &.fixed {
         position: fixed;
-        z-index: 1;
+        z-index: 4;
         background: $primary-white;
         border-bottom: 1px solid $zinc-200;
     }
@@ -524,6 +524,9 @@ body {
         }
         &__mobile {
             display: flex;
+        }
+        &.fixed {
+            z-index: 1;
         }
     }
     .main {

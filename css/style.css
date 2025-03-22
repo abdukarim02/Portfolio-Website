@@ -115,7 +115,7 @@ body {
 }
 .header.fixed {
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   background: #fff;
   border-bottom: 1px solid #e4e4e7;
 }
@@ -647,6 +647,9 @@ body {
   }
   .header__mobile {
     display: flex;
+  }
+  .header.fixed {
+    z-index: 1;
   }
   .main__content {
     flex-direction: column-reverse;
