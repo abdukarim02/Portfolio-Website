@@ -102,11 +102,17 @@ body {
   font-weight: 800;
 }
 
+.wrapper {
+  position: relative;
+  z-index: 2;
+}
+
 .header {
   width: 100%;
   padding: 25px 0;
   position: fixed;
-  z-index: 10;
+  background: #d4d4d8;
+  z-index: 1;
 }
 .header__content {
   display: flex;

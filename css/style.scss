@@ -56,11 +56,16 @@ body {
 .black {
     font-weight: 800;
 }
+.wrapper {
+    position: relative;
+    z-index: 2;
+}
 .header {
     width: 100%;
     padding: 25px 0;
     position: fixed;
-    z-index: 10;
+    background: $zinc-300;
+    z-index: 1;
     &__content {
         @include stylcenter(flex, center, space-between);
     }
