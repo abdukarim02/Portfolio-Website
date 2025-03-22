@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         header.classList.remove("fixed");
       }
     });
-  });
+});
 document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector(".header__body-burger");
     const nav = document.querySelector(".header__body-menu");
