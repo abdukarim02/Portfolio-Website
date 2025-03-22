@@ -59,6 +59,7 @@ body {
 .wrapper {
     position: relative;
     z-index: 2;
+
 }
 .header {
     width: 100%;
@@ -119,6 +120,7 @@ body {
         overflow: hidden;
         right: 0;
         top: 0;
+        z-index: 1;
     }
     &__body-burger {
         position: absolute;
@@ -126,22 +128,42 @@ body {
         right: 15px;
         width: 36px;
         height: 36px;
-        @include stylcenter(flex, center, space-evenly);
+        @include stylcenter(flex, center, space-around);
         flex-direction: column;
+        z-index: 3;
+        
         span {
             width: 80%;
             height: 3px;
-            background:  $primary-black;
+            background: $primary-black;
+            transition: all 0.3s ease-in;
+            background: $primary-black;
+        }
+    
+        &.active {
+            span {
+                background: $primary-white;
+            }
+            span:nth-child(1) {
+                transform: translateY(16px) rotate(45deg);
+            }
+            span:nth-child(2) {
+                opacity: 0;
+            }
+            span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
         }
     }
     &__body-menu {
-        display: none;
         position: absolute;
         right: 0;
         top: 0;
         width: 100%;
         height: 100%;
         background: $primary-black;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in;
         .header__menu-item {
             height: 100%;
             flex-direction: column;
@@ -151,7 +173,7 @@ body {
             color: $primary-white;
         }
         &.active {
-            display: block;
+            transform: translateX(0%);
         }
     }
 }
@@ -205,10 +227,12 @@ body {
     }
 }
 .skills {
+    overflow: hidden;
     padding-bottom: 60px;
     &__content-title {
         text-align: center;
         margin-bottom: 20px;
+        transition: all 0.3s ease-in;
     }
     &__content-wrap {
         @include stylcenter(flex, center, space-between);
@@ -296,6 +320,7 @@ body {
 }
 .about {
     padding: 60px 0;
+    overflow: hidden;
     &__content {
         @include stylcenter(flex, center, space-between);
     }
@@ -453,7 +478,7 @@ body {
 }
 .parallax {
     transform: translateX(0);
-    transition: transform 0.1s ease-out;
+    transition: transform 0.3s ease-out;
 }
 @media (max-width: 1024px) {
     .title {

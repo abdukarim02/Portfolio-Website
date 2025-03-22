@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
     const parallaxElements = [
-        { selector: ".info", speed: -0.3 },
-        { selector: ".bg", speed: 0.3 }
+        { selector: ".info", speed: -0.05 },
+        { selector: ".bg", speed: 0.05  }
     ];
 
     document.addEventListener("scroll", function () {
@@ -28,13 +28,32 @@ document.addEventListener("DOMContentLoaded", function () {
         let scrollPosition = window.scrollY;
 
         parallaxElements.forEach(({ selector, speed }) => {
-            let element = document.querySelector(selector);
-            if (element) {
-                element.style.transform = `translateX(${scrollPosition * speed}px)`;
-            }
+            document.querySelectorAll(selector).forEach(element => {
+                let rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    element.style.opacity = 1;
+                    element.style.transform = `translateX(${scrollPosition * speed}px)`;
+                } else {
+                    element.style.opacity = 0;
+                }
+            });
         });
     });
 });
-
-
+document.addEventListener("scroll", () => {
+    document.querySelectorAll("[data-speed]").forEach((element) => {
+      const speed = parseFloat(element.getAttribute("data-speed"));
+      const scrollY = window.scrollY;
+      
+      // Параллакс-эффект (движение вверх-вниз)
+      const yPos = scrollY * speed;
+      element.style.transform = `translateX(${yPos}px)`;
+      
+      // Изменение размера (уменьшение при прокрутке вниз)
+      let scale = 1 - scrollY * 0.0005; // Чем дальше скролл, тем меньше
+      scale = Math.max(-1, scale); // Минимальный размер - 0.5x
+      element.style.transform += ` scale(${scale})`;
+    });
+  });
+  
 
