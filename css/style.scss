@@ -65,9 +65,14 @@ body {
 .header {
     width: 100%;
     padding: 25px 0;
-    position: fixed;
-    background: $zinc-300;
-    z-index: 1;
+    transition: all 0.3s ease-in;
+    background: $primary-white;
+    &.fixed {
+        position: fixed;
+        z-index: 1;
+        background: $primary-white;
+        border-bottom: 1px solid $zinc-200;
+    }
     &__content {
         @include stylcenter(flex, center, space-between);
     }
@@ -179,7 +184,7 @@ body {
     }
 }
 .main {
-    padding: 120px 0 60px;
+    padding: 60px 0;
     overflow: hidden;
     &__content {
         @include stylcenter(flex, center, space-between);
