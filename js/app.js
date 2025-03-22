@@ -1,3 +1,4 @@
+
 // alert('hello');
 document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector(".header__body-burger");
@@ -55,5 +56,3 @@ document.addEventListener("scroll", () => {
       element.style.transform += ` scale(${scale})`;
     });
   });
-  
-
