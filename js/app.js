@@ -16,3 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const parallaxElements = [
+        { selector: ".info", speed: -0.3 },
+        { selector: ".bg", speed: 0.3 }
+    ];
+
+    document.addEventListener("scroll", function () {
+        if (window.innerWidth < 990) return;
+
+        let scrollPosition = window.scrollY;
+
+        parallaxElements.forEach(({ selector, speed }) => {
+            let element = document.querySelector(selector);
+            if (element) {
+                element.style.transform = `translateX(${scrollPosition * speed}px)`;
+            }
+        });
+    });
+});
+
+
+
